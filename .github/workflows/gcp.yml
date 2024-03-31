@@ -1,5 +1,4 @@
----
-name: Construir e carregar imagem python no Google Cloud Platform
+--name: Construir e carregar imagem python no Google Cloud Platform
 on:
   push:
     branches: [ main ]
@@ -8,13 +7,13 @@ jobs:
     name: Construir e carregar to GCP
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: GCP-Streamlit
+      IMAGE_NAME: gcp-streamlit
       PROJECT_ID: cloud-liveness-detection
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - uses: - uses: google-github-actions/setup-gcloud@v2
+    - uses: google-github-actions/setup-gcloud@v2
       with:
         service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
         project_id: ${{ env.PROJECT_ID }}
@@ -31,7 +30,6 @@ jobs:
     - name: Configure Docker Client
       run: |-
         gcloud auth configure-docker --quiet
-        gcloud auth configure-docker us-west2-docker.pkg.dev --quiet
 
     - name: Push Docker Image to Container Registry (GCR)
       env:
@@ -41,12 +39,3 @@ jobs:
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
-
-    - name: Push Docker Image to Artifact Registry
-      env:
-        GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
-      run: |-
-        docker tag $IMAGE_NAME:latest us-west2-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:latest
-        docker tag $IMAGE_NAME:latest us-west2-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:$GIT_TAG
-        docker push us-west2-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:latest
-        docker push us-west2-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:$GIT_TAG
