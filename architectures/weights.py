@@ -1,7 +1,7 @@
 """
 Video Face Manipulation Detection Through Ensemble of CNNs
 
-Image and Sound Processing Lab - Politecnico di Milano
+Agradecimento aos colegas que forneceram os modelos para a análise
 
 Nicolò Bonettini
 Edoardo Daniele Cannas

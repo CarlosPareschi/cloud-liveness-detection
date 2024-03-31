@@ -6,7 +6,9 @@ pandas
 efficientnet-pytorch
 scikit-learn
 pillow
-torch 
+torch
 scipy
 matplotlib
 numpy
+streamlit
+protobuf

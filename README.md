@@ -1,14 +1,9 @@
-# Deepfake Detector App
+# Detecção de Vida em Nuvem
 
-- [Deepfake Detector App](https://deep-fake-detection-m.streamlit.app/)
+- [Detecção de Vida em Nuvem](https://deep-fake-detection-m.streamlit.app/)
 
-## ScreenShots
-![Streamlit - Google Chrome 16-01-2024 21_30_24](https://github.com/Sneh-T-Shah/deepfake-detection/assets/116267467/eccce6cc-b829-4f68-9dda-42da833a571a)
-![Streamlit - Google Chrome 16-01-2024 21_30_40](https://github.com/Sneh-T-Shah/deepfake-detection/assets/116267467/33e35488-d1ef-4c9a-825f-c2a1be5bae89)
-![Streamlit - Google Chrome 16-01-2024 21_50_22](https://github.com/Sneh-T-Shah/deepfake-detection/assets/116267467/4a2007ff-aeb4-48da-b4c6-2cec40b0ba89)
-![Streamlit - Google Chrome 16-01-2024 21_33_16](https://github.com/Sneh-T-Shah/deepfake-detection/assets/116267467/f3b42776-d7a6-4563-8fae-60abc4623965)
 
-## Table of Contents
+## Índice
 
 - [Introduction](#introduction)
 - [Features](#features)
@@ -22,64 +17,51 @@
 
 ## Introduction
 
-Welcome to the Deepfake Detector App repository! This Streamlit app is designed to detect deepfake content in images and videos using state-of-the-art models. It provides a user-friendly interface for uploading files and obtaining deepfake predictions with adjustable parameters.
+Bem-vindo ao repositório do Detecção de vida em nuvem! Este aplicativo Streamlit foi criado para identificar conteúdos falsificados, conhecidos como deepfakes, em imagens e vídeos, aplicando técnicas e modelos avançados. Oferece uma interface simples e intuitiva para que os usuários possam facilmente enviar seus arquivos e receber análises sobre a presença de deepfakes, com a possibilidade de ajustar os parâmetros de detecção conforme necessário.
 
-# Recommended parameters:
- - Model : **EfficientNetAutoAttB4**
- - Dataset: **DFDC**
+# Parâmetros definidos:
+ - Modelo: **EfficientNetAutoAttB4**
+ - Conjunto de dados: **DFDC**
 
-## Features
+### Recursos
 
-- **File Type Selection**: Choose between uploading an image or a video for deepfake detection.
-- **Model Selection**: Select from various deepfake detection models, such as EfficientNetB4, EfficientNetB4ST, EfficientNetAutoAttB4, etc.
-- **Dataset Option**: Choose the dataset (DFDC or FFPP) used to train the deepfake detection model.
-- **Adjustable Threshold**: Set a threshold for deepfake probability to control sensitivity.
-- **Video Frame Selection**: If analyzing a video, choose the number of frames to process.
-- **Detailed Results**: Get detailed results with probabilities and visual cues indicating the likelihood of deepfake content.
-- **Project Information**: Display additional information about the project, such as credits, links to GitHub, and collaborators.
+- **Seleção de Tipo de Arquivo**: Escolha entre fazer upload de uma imagem ou um vídeo para detecção de deepfake.
+- **Limiar Ajustável**: Defina um limiar para a probabilidade de deepfake para controlar a sensibilidade.
+- **Seleção de Quadros de Vídeo**: Se estiver analisando um vídeo, escolha o número de quadros para processar.
+- **Resultados Detalhados**: Obtenha resultados detalhados com probabilidades e pistas visuais indicando a probabilidade de conteúdo deepfake.
+- **Informação do Projeto**: Exiba informações adicionais sobre o projeto, como créditos, links para o GitHub e colaboradores.
 
 ## Installation
 
-1. Clone the repository:
+1. Clone o repositório:
 
 ```bash
-git clone https://github.com/Sneh-T-Shah/deepfake-detection.git
-cd deepfake-detection
+git clone https://github.com/
 ```
 
-2. Install the required dependencies:
+2. Instale as dependências necessárias:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+## Uso
 
-Run the Streamlit app:
+Execute o aplicativo Streamlit:
 ```bash
 streamlit run app.py
 ```
-Visit the provided local URL to access the app in your browser.
+Visite a URL local fornecida para acessar o aplicativo no seu navegador.
 
-## File Structure
-- app.py : Main Streamlit application script.
-- api.py : Contains functions for processing images and videos using deepfake detection models.
-- uploads/ : Folder to store uploaded files.
-- requirements.txt : List of Python dependencies.
+## Estrutura de Arquivos
+- **app.py**: Script principal para o aplicativo Streamlit.
+- **api.py**: Inclui funções para analisar imagens e vídeos através de modelos específicos para identificação de deepfakes.
+- **uploads/**: Diretório destinado ao armazenamento de arquivos enviados pelos usuários.
+- **requirements.txt**: Relação de pacotes Python necessários para o projeto.
 
-## Dependencies
+## Dependências
+Para visualizar as dependências necessárias, acesse: [requirements.txt](https://github.com/requirements.txt)
 
-Find the dependencies here: https://github.com/Sneh-T-Shah/deepfake-detection/blob/main/requirements.txt
-
-## Contributing
-We welcome contributions! If you'd like to contribute to this project.
-
-
-## Acknowledgments
-Web app for this project is made by Sneh Shah and Pankil Soni.
-
-## Contact
-For any query or feedback, please contact:
-
-- [Sneh shah](https://github.com/Sneh-T-Shah/)
-- [Pankil Soni](https://github.com/pankil-soni/)
+## Contato
+Em caso de dúvidas ou sugestões, por favor, entre em contato com:
+- [![LinkedIn Carlos Pareschi](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555&logoColor=white)](https://www.linkedin.com/in/carlos-alberto-pareschi/)
