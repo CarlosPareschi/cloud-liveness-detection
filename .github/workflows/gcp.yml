@@ -1,4 +1,4 @@
---name: Construir e carregar imagem python no Google Cloud Platform
+--name: construir e carregar gcp
 on:
   push:
     branches: [ main ]
