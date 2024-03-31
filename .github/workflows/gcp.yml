@@ -1,42 +1,48 @@
-name: Construir e carregar imagem python no Google Cloud Platform
+name: Construir e carregar imagem Python no Google Cloud Platform
 
 on:
   push:
     branches: [ main ]
+
 jobs:
   build-push-gcr:
-    name: Construir e carregar to GCP
+    name: Construir e carregar para o GCP
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: gcp-streamlit
       PROJECT_ID: cloud-liveness-detection
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - uses: google-github-actions/setup-gcloud@v2
-      with:
-        service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
-        project_id: ${{ env.PROJECT_ID }}
-        export_default_credentials: true
+      - name: Authenticate gcloud CLI
+        uses: google-github-actions/auth@v0
+        with:
+          credentials: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 
-    - name: Build Docker Image
-      run: docker build -t $IMAGE_NAME:latest .
+      - name: Setup gcloud
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: ${{ env.PROJECT_ID }}
 
-    - name: Automatic Tagging of Releases
-      id: increment-git-tag
-      run: |
-        bash ./scripts/git_update.sh -v major
+      - name: Build Docker Image
+        run: docker build -t $IMAGE_NAME:latest .
 
-    - name: Configure Docker Client
-      run: |-
-        gcloud auth configure-docker --quiet
+      - name: Automatic Tagging of Releases
+        id: increment-git-tag
+        run: |
+          bash ./scripts/git_update.sh -v major
 
-    - name: Push Docker Image to Container Registry (GCR)
-      env:
-        GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
-      run: |-
-        docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
-        docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
-        docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
-        docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+      - name: Configure Docker Client
+        run: |-
+          gcloud auth configure-docker --quiet
+
+      - name: Push Docker Image to Container Registry (GCR)
+        env:
+          GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
+        run: |-
+          docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+          docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+          docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+          docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
