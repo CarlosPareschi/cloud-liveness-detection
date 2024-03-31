@@ -1,21 +1,18 @@
 # Detecção de Vida em Nuvem
 
-- [Detecção de Vida em Nuvem](https://deep-fake-detection-m.streamlit.app/)
-
-
 ## Índice
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [File Structure](#file-structure)
-- [Dependencies](#dependencies)
-- [Contributing](#contributing)
-- [Acknowledgments](#acknowledgments)
-- [Contact](#contact)
+- [Introdução](#introdução)
+- [Recursos](#recursos)
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Estrutura de Arquivos](#estrutura-de-arquivos)
+- [Dependências](#dependências)
+- [Contribuindo](#contribuindo)
+- [Agradecimentos](#agradecimentos)
+- [Contato](#contato)
 
-## Introduction
+## Introdução
 
 Bem-vindo ao repositório do Detecção de vida em nuvem! Este aplicativo Streamlit foi criado para identificar conteúdos falsificados, conhecidos como deepfakes, em imagens e vídeos, aplicando técnicas e modelos avançados. Oferece uma interface simples e intuitiva para que os usuários possam facilmente enviar seus arquivos e receber análises sobre a presença de deepfakes, com a possibilidade de ajustar os parâmetros de detecção conforme necessário.
 
@@ -31,7 +28,7 @@ Bem-vindo ao repositório do Detecção de vida em nuvem! Este aplicativo Stream
 - **Resultados Detalhados**: Obtenha resultados detalhados com probabilidades e pistas visuais indicando a probabilidade de conteúdo deepfake.
 - **Informação do Projeto**: Exiba informações adicionais sobre o projeto, como créditos, links para o GitHub e colaboradores.
 
-## Installation
+## Instalação
 
 1. Clone o repositório:
 
@@ -60,8 +57,9 @@ Visite a URL local fornecida para acessar o aplicativo no seu navegador.
 - **requirements.txt**: Relação de pacotes Python necessários para o projeto.
 
 ## Dependências
-Para visualizar as dependências necessárias, acesse: [requirements.txt](https://github.com/requirements.txt)
+Para visualizar as dependências necessárias, acesse: [requirements.txt](https://github.com/CarlosPareschi/cloud-liveness-detection/blob/main/requirements.txt)
 
 ## Contato
 Em caso de dúvidas ou sugestões, por favor, entre em contato com:
-- [![LinkedIn Carlos Pareschi](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555&logoColor=white)](https://www.linkedin.com/in/carlos-alberto-pareschi/)
+- [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555&logoColor=white)](https://www.linkedin.com/in/carlos-alberto-pareschi/) Carlos Alberto Pareschi
+
