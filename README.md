@@ -1,5 +1,7 @@
 # Detecção de Vida em Nuvem
 
+Acesse o projeto no streamlit sharing [aqui](https://cloud-liveness-detection.streamlit.app).
+
 ## Índice
 
 - [Introdução](#introdução)
