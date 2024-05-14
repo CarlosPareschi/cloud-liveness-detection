@@ -120,7 +120,7 @@ st.markdown(
     <div style="text-align:center; background-color: #F5F5DC; color: #ffffff">
         <h2 style="color: #1e4532; font-weight: bold;">Informações do Projeto</h2>
         <p style="text-align: left; color: #1e4532; font-weight: bold;">Este aplicativo Streamlit aceita uma imagem ou um vídeo como entrada e prevê se é uma deepfake ou não.</p>
-        <p style="text-align: left; color: #1e4532; font-weight: bold;">Projeto de conclusão da disciplina de Cognitive Environments do MBA em Data Science & IA da FIAP.</p>
+        <p style="text-align: left; color: #1e4532; font-weight: bold;">Projeto de conclusão da disciplina de Computer Vision do MBA em Data Science & IA da FIAP.</p>
     </div>
     """,
     unsafe_allow_html=True
